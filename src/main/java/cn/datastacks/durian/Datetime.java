@@ -2,10 +2,9 @@ package cn.datastacks.durian;
 
 import org.apache.commons.lang3.StringUtils;
 
-import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.TemporalAdjusters;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 /**
@@ -14,72 +13,58 @@ import java.util.regex.Pattern;
  * @author yurun
  */
 public class Datetime {
-    public static final Pattern DATETIME_PATTERN = Pattern.compile("^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$");
+    private static final DateTimeFormatter LOCAL_DATE_FORMATTER = DateTimeFormatter.ofPattern(Constant.LOCAL_DATE);
+    private static final DateTimeFormatter LOCAL_DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern(Constant.LOCAL_DATE_TIME);
 
-    public static final long ONE_DAY_MILLISECONDS = 24 * 3600 * 1000;
+    private static final Pattern DATETIME_PATTERN = Pattern.compile("^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$");
 
+    /**
+     * 获取当前日期和时间
+     *
+     * @return 日期和时间
+     */
+    public static LocalDateTime now() {
+        return LocalDateTime.now();
+    }
+
+    /**
+     * 获取当前日期
+     *
+     * @return 当前日期：yyyy-MM-dd
+     */
     public static String date() {
-        return datetime().substring(0, 10);
+        return now().format(LOCAL_DATE_FORMATTER);
     }
 
+    /**
+     * 获取当前日期和时间
+     *
+     * @return 当前日期和时间，格式：yyyy-MM-dd HH:mm:ss
+     */
     public static String datetime() {
-        return LocalDateTime.now().format(DateTimeFormatter.ofPattern(Constant.LOCAL_DATE_TIME));
+        return now().format(LOCAL_DATE_TIME_FORMATTER);
     }
 
-    public static String dayStartTime(String datetime) {
-        return LocalDateTime
-                .parse(datetime, DateTimeFormatter.ofPattern(Constant.LOCAL_DATE_TIME))
-                .format(DateTimeFormatter.ofPattern(Constant.LOCAL_DATE_TIME_START));
+    /**
+     * 格式化日期和时间
+     *
+     * @param datetime 日期和时间
+     * @return 日期和时间，格式：yyyy-MM-dd HH:mm:ss
+     */
+    public static String format(LocalDateTime datetime) {
+        if (Objects.isNull(datetime)) {
+            return Constant.EMPTY;
+        }
+
+        return datetime.format(LOCAL_DATE_TIME_FORMATTER);
     }
 
-    public static String dayEndTime(String datetime) {
-        return LocalDateTime
-                .parse(datetime, DateTimeFormatter.ofPattern(Constant.LOCAL_DATE_TIME))
-                .format(DateTimeFormatter.ofPattern(Constant.LOCAL_DATE_TIME_END));
-    }
-
-    public static String todayStartTime() {
-        return LocalDateTime.now().format(DateTimeFormatter.ofPattern(Constant.LOCAL_DATE_TIME_START));
-    }
-
-    public static String todayEndTime() {
-        return LocalDateTime.now().format(DateTimeFormatter.ofPattern(Constant.LOCAL_DATE_TIME_END));
-    }
-
-    public static String tomorrowStartTime() {
-        return LocalDateTime.now().plusDays(1).format(DateTimeFormatter.ofPattern(Constant.LOCAL_DATE_TIME_START));
-    }
-
-    public static String tomorrowEndTime() {
-        return LocalDateTime.now().plusDays(1).format(DateTimeFormatter.ofPattern(Constant.LOCAL_DATE_TIME_END));
-    }
-
-    public static String thisWeekStartTime() {
-        return LocalDateTime.now()
-                .with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY))
-                .format(DateTimeFormatter.ofPattern(Constant.LOCAL_DATE_TIME_START));
-    }
-
-    public static String thisWeekEndTime() {
-        return LocalDateTime.now()
-                .with(TemporalAdjusters.nextOrSame(DayOfWeek.SUNDAY))
-                .format(DateTimeFormatter.ofPattern(Constant.LOCAL_DATE_TIME_END));
-    }
-
-    public static String nextWeekStartTime() {
-        return LocalDateTime.now()
-                .plusWeeks(1)
-                .with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY))
-                .format(DateTimeFormatter.ofPattern(Constant.LOCAL_DATE_TIME_START));
-    }
-
-    public static String nextWeekEndTime() {
-        return LocalDateTime.now()
-                .plusWeeks(1)
-                .with(TemporalAdjusters.nextOrSame(DayOfWeek.SUNDAY))
-                .format(DateTimeFormatter.ofPattern(Constant.LOCAL_DATE_TIME_END));
-    }
-
+    /**
+     * 检查字符串是否为日期和时间格式
+     *
+     * @param datetime 字符串
+     * @return 如果字符串是日期和时间格式，返回 true；否则，返回 false
+     */
     public static boolean isDatetime(String datetime) {
         if (StringUtils.isEmpty(datetime)) {
             return false;
