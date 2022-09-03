@@ -21,6 +21,7 @@ public class Bean {
      *
      * @param clazz 对象类
      * @param map   字典
+     * @param <T>   对象类型或方法返回值类型
      * @return 对象
      */
     public static <T> T convert(Class<T> clazz, Map<String, Object> map) {
@@ -43,6 +44,7 @@ public class Bean {
      *
      * @param clazz 对象类
      * @param maps  字典列表
+     * @param <T>   对象类型或方法返回值列表元素类型
      * @return 对象列表
      */
     public static <T> List<T> converts(Class<T> clazz, List<Map<String, Object>> maps) {
