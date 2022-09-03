@@ -7,7 +7,7 @@ package cn.datastacks.durian;
  */
 public class Constant {
     /**
-     * &
+     * 连字符
      */
     public static final String AMPERSAND = "&";
 
