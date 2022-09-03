@@ -66,6 +66,10 @@ public class Datetime {
      * @return 日期和时间
      */
     public static LocalDateTime parse(String datetime) {
+        if (StringUtils.isEmpty(datetime)) {
+            return null;
+        }
+
         return LocalDateTime.parse(datetime, LOCAL_DATE_TIME_FORMATTER);
     }
 
