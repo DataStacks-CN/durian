@@ -15,7 +15,7 @@ import java.util.Map;
 @Slf4j
 public class JsonTest {
     @Data
-    private static class MyObj {
+    public static class MyObj {
         private int col1;
         private double col2;
         private String col3;
