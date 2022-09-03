@@ -9,9 +9,9 @@ Bean 可以用于将字典（Map）转换对象，或者填充对象，字典键
 ```java
 Map<String, Object> map=new HashMap<>();
 
-        map.put("col1",1);
-        map.put("col2",2.0);
-        map.put("col3","abc");
+map.put("col1",1);
+map.put("col2",2.0);
+map.put("col3","abc");
 ```
 
 字典中有三个键：col1、col2 和 col3。
@@ -53,27 +53,27 @@ col1=1, col2=2.0, col3=abc
 ```java
 Map<String, Object> map=new HashMap<>();
 
-        map.put("col1",1);
-        map.put("col2",2.0);
-        map.put("col3","abc");
+map.put("col1",1);
+map.put("col2",2.0);
+map.put("col3","abc");
 
-        Map<String, Object> map2=new HashMap<>();
+Map<String, Object> map2=new HashMap<>();
 
-        map2.put("col1",3);
-        map2.put("col2",4.0);
-        map2.put("col3","def");
+map2.put("col1",3);
+map2.put("col2",4.0);
+map2.put("col3","def");
 
-        Map<String, Object> map3=new HashMap<>();
+Map<String, Object> map3=new HashMap<>();
 
-        map3.put("col1",5);
-        map3.put("col2",6.0);
-        map3.put("col3","ghi");
+map3.put("col1",5);
+map3.put("col2",6.0);
+map3.put("col3","ghi");
 
-        List<Map<String, Object>>maps=new ArrayList<>();
+List<Map<String, Object>>maps=new ArrayList<>();
 
-        maps.add(map);
-        maps.add(map2);
-        maps.add(map3);
+maps.add(map);
+maps.add(map2);
+maps.add(map3);
 ```
 
 字典列表中包含有三个字典：map、map2 和 map3。
