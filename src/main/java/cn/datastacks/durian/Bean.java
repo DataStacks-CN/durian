@@ -80,6 +80,7 @@ public class Bean {
      *
      * @param beans 对象列表
      * @param maps  字典列表
+     * @param <T>   对象列表元素类型
      */
     public static <T> void populates(List<T> beans, List<Map<String, Object>> maps) {
         if (CollectionUtils.isEmpty(beans) || CollectionUtils.isEmpty(maps)) {
