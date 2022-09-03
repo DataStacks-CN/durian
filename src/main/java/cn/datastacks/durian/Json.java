@@ -166,6 +166,7 @@ public final class Json {
      *
      * @param json  Json 字符串
      * @param clazz 对象类
+     * @param <T>   对象类型或方法返回值类型
      * @return 对象
      */
     public static <T> T fromJson(String json, Class<T> clazz) {
@@ -177,6 +178,7 @@ public final class Json {
      *
      * @param json Json 字符串
      * @param type 对象类型
+     * @param <T>  方法返回值类型
      * @return 对象
      */
     public static <T> T fromJson(String json, Type type) {
