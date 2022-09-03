@@ -1,7 +1,7 @@
 package cn.datastacks.durian;
 
 /**
- * Constant
+ * 常量工具类
  *
  * @author yurun
  */
