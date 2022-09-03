@@ -1,9 +1,11 @@
 package cn.datastacks.durian;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeParseException;
 
 @Slf4j
 public class DatetimeTest {
@@ -20,6 +22,14 @@ public class DatetimeTest {
     @Test
     public void datetime() {
         log.info("datetime: {}", Datetime.datetime());
+    }
+
+    @Test
+    public void parse() {
+        String datetime = Datetime.datetime();
+        Assert.assertNotNull(Datetime.parse(datetime));
+
+        Assert.assertThrows(DateTimeParseException.class, () -> Datetime.parse(datetime.substring(1)));
     }
 
     @Test

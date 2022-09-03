@@ -60,6 +60,16 @@ public class Datetime {
     }
 
     /**
+     * 解析日期和时间
+     *
+     * @param datetime 日期和时间字符串，格式：yyyy-MM-dd HH:mm:ss
+     * @return 日期和时间
+     */
+    public static LocalDateTime parse(String datetime) {
+        return LocalDateTime.parse(datetime, LOCAL_DATE_TIME_FORMATTER);
+    }
+
+    /**
      * 检查字符串是否为日期和时间格式
      *
      * @param datetime 字符串
