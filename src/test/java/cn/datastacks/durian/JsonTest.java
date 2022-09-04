@@ -34,17 +34,11 @@ public class JsonTest {
 
     @Test
     public void fromJson() {
-        MyObj obj = new MyObj();
-
-        obj.setCol1(1);
-        obj.setCol2(2.0);
-        obj.setCol3("abc");
-
-        String json = Json.toJson(obj);
+        String json = "{\"col1\":1,\"col2\":2.0,\"col3\":\"abc\"}";
         log.info("json: {}", json);
 
-        MyObj fromJson = Json.fromJson(json, MyObj.class);
-        log.info("fromJson: {}", fromJson);
+        MyObj myObj = Json.fromJson(json, MyObj.class);
+        log.info("myObj: {}", myObj);
     }
 
     @Test
