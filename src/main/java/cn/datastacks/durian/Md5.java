@@ -36,4 +36,8 @@ public class Md5 {
 
         return new String(md5);
     }
+
+    private Md5() {
+
+    }
 }

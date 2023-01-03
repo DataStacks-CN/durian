@@ -172,4 +172,8 @@ public class Constant {
      * MD5
      */
     public static final String MD5 = "MD5";
+
+    private Constant() {
+
+    }
 }

@@ -274,4 +274,8 @@ public final class Json {
             return false;
         }
     }
+
+    private Json() {
+
+    }
 }

@@ -90,4 +90,8 @@ public class Bean {
         IntStream.range(0, beans.size())
                 .forEach(index -> populate(beans.get(index), maps.get(index)));
     }
+
+    private Bean() {
+
+    }
 }

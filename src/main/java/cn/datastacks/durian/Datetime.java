@@ -86,4 +86,8 @@ public class Datetime {
 
         return DATETIME_PATTERN.matcher(datetime).matches();
     }
+
+    private Datetime() {
+
+    }
 }
