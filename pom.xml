@@ -12,7 +12,7 @@
     </parent>
 
     <artifactId>durian</artifactId>
-    <version>0.9-SNAPSHOT</version>
+    <version>0.9</version>
 
     <dependencies>
         <dependency>
