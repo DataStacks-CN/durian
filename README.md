@@ -27,3 +27,4 @@ Durian 是一个 Java 工具类集合：
 * [Datetime](./doc/datetime.md)
 * [Json](./doc/json.md)
 * [Uuid](./doc/uuid.md)
+* [MD5](./doc/md5.md)
