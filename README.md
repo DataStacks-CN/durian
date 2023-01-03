@@ -16,7 +16,7 @@ Durian 是一个 Java 工具类集合：
 <dependency>
     <groupId>cn.datastacks</groupId>
     <artifactId>durian</artifactId>
-    <version>0.9</version>
+    <version>0.9.1-SNAPSHOT</version>
 </dependency>
 ```
 
