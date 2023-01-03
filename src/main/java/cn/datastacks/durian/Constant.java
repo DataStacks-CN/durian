@@ -167,4 +167,9 @@ public class Constant {
      * https
      */
     public static final String HTTPS = "https";
+
+    /**
+     * MD5
+     */
+    public static final String MD5 = "MD5";
 }

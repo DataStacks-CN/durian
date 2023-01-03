@@ -7,6 +7,7 @@ Durian 是一个 Java 工具类集合：
 * Datetime：日期和时间处理工具类
 * Json：Json 处理工具类
 * Uuid：UUID 工具类
+* MD5：MD5 工具类
 
 ## 下载
 
